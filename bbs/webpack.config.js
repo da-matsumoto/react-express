@@ -1,5 +1,5 @@
 const path = require('path')
-module.exprots = {
+module.exports = {
     mode : 'development',
     entry: path.join(__dirname, 'src/index.js'),
     output: {

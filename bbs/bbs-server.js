@@ -12,7 +12,7 @@ app.listen(portNo, () => {
     console.log('起動しました', `http://localhost:${portNo}`)
 })
 
-app.use('public', express.static('./public'))
+app.use('/public', express.static('./public'))
 app.get('/', (req, res) => {
     res.redirect(302, '/public')
 })
@@ -33,7 +33,7 @@ app.get('/api/write', (req, res) => {
     db.insert({
         name: q.name,
         body: q.body,
-        stime: (new. Date()).getTime()
+        stime: (new Date()).getTime()
     }, (err, doc) => {
         if (err) {
             console.error(err)
